@@ -1,0 +1,10 @@
+{% if current_user.is_anonymous %}
+{% else %}
+    {% set vote = current_user.already_voted_comment(comment) %}
+    <a class="vote-button upvote {% if vote and vote.liked %}selected{% endif %}" href="{{ url_for('main.upvote_comment', comment_id=comment.id) }}">
+        <i class="glyphicon glyphicon-arrow-up"></i>
+    </a>
+    <a class="vote-button downvote {% if vote and not vote.liked %}selected{% endif %}" href="{{ url_for('main.downvote_comment', comment_id=comment.id) }}">
+        <i class="glyphicon glyphicon-arrow-down"></i>
+    </a>
+{% endif %}

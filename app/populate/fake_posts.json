@@ -1,0 +1,35 @@
+[
+  {
+    "chat": "funny",
+    "title": "Haha look at this",
+    "body": "This is funny post.",
+    "author": "puffyboa",
+    "comments": [
+        {
+            "body": "I agree this is funny",
+            "author": "john"
+        }
+    ],
+    "votes": [
+        {"user": "john", "liked": true}
+    ]
+  },
+  {
+    "chat": "pics",
+    "title": "A picture",
+    "body": "actually there is no picture",
+    "author": "puffyboa",
+    "comments": [
+        {
+            "body": "wait what",
+            "author": "john",
+            "comments": [
+                {"body": "Yeah i know", "author": "puffyboa"}
+            ]
+        }
+    ],
+    "votes": [
+        {"user": "john", "liked": true}
+    ]
+  },
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "funny",
+    "about": "This is the funny chat.",
+    "creator": "puffyboa",
+    "subscribers": ["puffyboa", "john"]
+  },
+  {
+    "name": "pics",
+    "about": "This is the chat where there are pictures.",
+    "creator": "john",
+    "subscribers": ["puffyboa", "john"]
+  }
+]
