@@ -79,8 +79,10 @@ def create_app():
         app.logger.setLevel(logging.INFO)
         app.logger.info('WEBSITE startup')
 
+    with app.app_context():
+        from app.util import filters
+
     return app
 
 
-from app.util import filters
-import app.models
+from app import models

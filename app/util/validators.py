@@ -4,12 +4,13 @@ from app.util.helpers import is_valid_name
 
 
 class Unique:
-    def __init__(self, query_func, message=u'This element already exists.'):
+    def __init__(self, query_func, allowed=(), message=u'This element already exists.'):
         self.query_func = query_func
+        self.allowed = allowed
         self.message = message
 
     def __call__(self, form, field):
-        if self.query_func(field.data) is not None:
+        if field.data not in self.allowed and self.query_func(field.data) is not None:
             raise ValidationError(self.message)
 
 

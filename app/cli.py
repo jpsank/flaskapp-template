@@ -13,7 +13,7 @@ def register(cli):
     @cli.command()
     def populate():
         print("Populating database...")
-        os.system("./venv/bin/python -m app.populate")
+        from app import populate
 
 
 if __name__ == '__main__':

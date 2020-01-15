@@ -43,22 +43,21 @@ def create_post(fake_post):
         create_comments(fake_post["comments"], parent_post=post)
 
 
-if __name__ == '__main__':
-    with open(os.path.join(basedir, "app/populate/fake_users.json"), "r") as f:
-        fake_users = json.load(f)
-    for fake_user in fake_users:
-        db.session.add(create_user(fake_user))
-    db.session.commit()
+with open(os.path.join(basedir, "app/populate/fake_users.json"), "r") as f:
+    fake_users = json.load(f)
+for fake_user in fake_users:
+    db.session.add(create_user(fake_user))
+db.session.commit()
 
-    with open(os.path.join(basedir, "app/populate/fake_chats.json"), "r") as f:
-        fake_chats = json.load(f)
-    for fake_chat in fake_chats:
-        db.session.add(create_chat(fake_chat))
-    db.session.commit()
+with open(os.path.join(basedir, "app/populate/fake_chats.json"), "r") as f:
+    fake_chats = json.load(f)
+for fake_chat in fake_chats:
+    db.session.add(create_chat(fake_chat))
+db.session.commit()
 
-    with open(os.path.join(basedir, "app/populate/fake_posts.json"), "r") as f:
-        fake_posts = json.load(f)
-    for fake_post in fake_posts:
-        db.session.add(create_post(fake_post))
-    db.session.commit()
+with open(os.path.join(basedir, "app/populate/fake_posts.json"), "r") as f:
+    fake_posts = json.load(f)
+for fake_post in fake_posts:
+    db.session.add(create_post(fake_post))
+db.session.commit()
 
